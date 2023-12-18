@@ -4,7 +4,7 @@
   "description": "Playwright with typescript automation framework",
   "main": "index.js",
   "scripts": {
-    "testCase": "npx playwright test"
+    "testCase": "npx playwright test - project=chromium"
   },
   "keywords": [
     "playwright test runner",
