@@ -57,9 +57,9 @@ export default class extends BasePage
     {
         const myAccountLinks: Promise<Locator[]> = this.page.locator(this.MyAccountHyperlinks).all();
         const arr: string[] = ["My Account Information", "Change Password", "Address Book Entries", "My Wish List", "Newsletter Subscription"];
-        for (let i = 0; i < (await myAccountLinks).length; i++) 
+        for (let i = 0; i < arr.length; i++) 
         {
-            await myAccountLinks[i].click();
+            (await myAccountLinks).at(i)?.click();
             expect(await this.page.locator("h1[class='page-title h3 mb-3']").textContent()).toEqual(arr[i]);
             await this.page.goBack();
         }
@@ -68,11 +68,12 @@ export default class extends BasePage
     public async verifyMyOrdersLinks() 
     {
         const myOrderLinks: Promise<Locator[]> = this.page.locator(this.myOrdersHyperlinks).all();
+        console.log((await myOrderLinks).length);
         const arr: string[] = ["Order History", "Account Downloads", "Your Reward Points", "Product Returns", "Your Transactions", "Recurring Payments"];
-        for (let i = 0; i < (await myOrderLinks).length; i++) 
+        for (let i = 0; i < arr.length; i++) 
         {
-            await myOrderLinks[i].click();
-            expect(this.page.locator("h1[class='page-title h3 mb-3']").textContent).toEqual(arr[i]);
+            (await myOrderLinks).at(i)?.click();
+            expect(await this.page.locator("h1[class='page-title h3 mb-3']").textContent()).toEqual(arr[i]);
             await this.page.goBack();
         }
     }
