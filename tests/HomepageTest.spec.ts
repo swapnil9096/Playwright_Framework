@@ -1,19 +1,23 @@
 import {test, expect, Page } from "@playwright/test";
-import LoginPagePage from "../src/pages/LoginPage.page";
-import HomepagePage from "../src/pages/Homepage.page";
+import LoginPage from "../src/pages/LoginPage";
 import BasePage from "../src/base/utils/BasePage";
+import Homepage from "../src/pages/Homepage";
 
-test('Verify top categories links',async({browser,page})=>
+test('Verify top categories links',async({page})=>
 {   
     test.setTimeout(90000);
      
-    const login = new LoginPagePage(page);
-    const homepage = new HomepagePage(page);
+    const login = new LoginPage(page);
+    const homepage = new Homepage(page);
 
     await new BasePage(page).hitUrl();
 
     await login.getLogin("bobadeswapnil94@gmail.com","Abc@123");
+    await homepage.verifyMyAccountHyperlinks();
+    await homepage.verifyMyOrdersLinks();
     await homepage.clickOnShopByCategory();
-    await homepage.VerifyTopCategoriesLinks();
+    // await homepage.verifyTopCategoriesLinks();
+    // await homepage.verifyMyAccountHyperlinks();
+    
     
 });

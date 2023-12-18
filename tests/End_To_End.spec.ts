@@ -1,12 +1,12 @@
 import {test,expect} from "@playwright/test";
-import LoginPagePage from "../src/pages/LoginPage.page";
-import HomepagePage from "../src/pages/Homepage.page";
+import LoginPage from "../src/pages/LoginPage";
+import Homepage from "../src/pages/Homepage";
 import End_To_End from "../src/pages/End_To_End";
 
 test('Verify end to end flow',async({page})=>
 {
     test.setTimeout(90000);
-    const login    = new LoginPagePage(page);
+    const login    = new LoginPage(page);
     const endtoend = new End_To_End(page);
 
     login.hitUrl();
