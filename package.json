@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Playwright with typescript automation framework",
   "main": "index.js",
-  "scripts": {"test": "npx playwright test"},
-  "keywords": ["playwright test runner","playwright typescript framework"],
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": [
+    "playwright test runner",
+    "playwright typescript framework"
+  ],
   "author": "Swapnil Bobade",
   "license": "ISC",
   "devDependencies": {

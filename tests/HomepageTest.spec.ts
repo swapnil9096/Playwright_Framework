@@ -31,7 +31,7 @@ test('Verify my account hyperlinks', async({page})=>
     await homepage.verifyMyAccountHyperlinks();
 });
 
-test.only('Verify my order hyperlinks',async({page})=>
+test('Verify my order hyperlinks',async({page})=>
 {
     test.setTimeout(90000);
     await login.getLogin("bobadeswapnil94@gmail.com","Abc@123");

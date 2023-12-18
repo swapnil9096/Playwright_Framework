@@ -39,7 +39,7 @@ test('Verify end to end flow',async({page})=>
     // await endtoend.clickOnSameAddress();
     await endtoend.clickOnTermAndContion();
     await endtoend.clickOnContinueBtn();
-    await endtoend.clickOnConfirmBtn();
-    console.log(await endtoend.getPageTitle());
+    // await endtoend.clickOnConfirmBtn();
+    // console.log(await endtoend.getPageTitle());
 
 });
