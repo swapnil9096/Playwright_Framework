@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo '''
                     npx playwright test --list
-                    npx playwright test
+                    npx playwright test --headed
                 '''
             }
         }
